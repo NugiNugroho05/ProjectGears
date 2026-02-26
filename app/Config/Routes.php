@@ -22,3 +22,6 @@ $routes->post('/product/save', 'Product::save');
 $routes->get('/product/edit/(:num)', 'Product::edit/$1');
 $routes->post('/product/update/(:num)', 'Product::update/$1');
 $routes->get('/product/delete/(:num)', 'Product::delete/$1');
+
+// 4. Halaman Dashboard - Untuk Admin
+$routes->get('/dashboard', 'DashboardController::index');
