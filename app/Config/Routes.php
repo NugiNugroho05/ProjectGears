@@ -10,10 +10,13 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 $routes->get('/contact', 'Home::contact');
 $routes->get('/cart', 'Home::cart');
+$routes->get('/bestseller', 'Home::bestseller'); // Pindahkan ke Home agar konsisten
 
 // 2. Halaman Belanja (Shop) - Untuk Pengunjung
-$routes->get('/shop', 'Shop::index');
-$routes->get('/shop/detail/(:any)', 'Shop::detail/$1');
+// PERBAIKAN: Arahkan ke Controller Home, karena di situ data produk di-load
+$routes->get('/shop', 'Home::shop');
+// PERBAIKAN FATAL: Arahkan ke fungsi 'single' di Controller Home
+$routes->get('/single/(:num)', 'Home::single/$1'); 
 
 // 3. Halaman Manajemen Produk (Product) - Untuk Admin
 $routes->get('/product', 'Product::index');
@@ -22,3 +25,13 @@ $routes->post('/product/save', 'Product::save');
 $routes->get('/product/edit/(:num)', 'Product::edit/$1');
 $routes->post('/product/update/(:num)', 'Product::update/$1');
 $routes->get('/product/delete/(:num)', 'Product::delete/$1');
+
+// 4. Halaman Checkout (Checkout)
+// PERBAIKAN: Arahkan ke Controller Home karena fungsi 'checkout' ada di sana
+$routes->get('/checkout', 'Home::checkout'); 
+// TAMBAHAN: Untuk memproses order, lo butuh route POST
+$routes->post('/checkout/placeOrder', 'Home::placeOrder');
+
+// 5. Keranjang (Cart) - Logika
+$routes->get('/cart/add/(:num)', 'Cart::add/$1');
+$routes->get('/cart/remove/(:num)', 'Cart::remove/$1');

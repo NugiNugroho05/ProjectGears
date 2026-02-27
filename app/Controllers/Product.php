@@ -2,42 +2,39 @@
 
 namespace App\Controllers;
 
+use App\Models\ProductModel;
+
 class Product extends BaseController
 {
+    protected $productModel;
+
+    public function __construct()
+    {
+        $this->productModel = new ProductModel();
+    }
+
     public function index()
     {
-        // Halaman daftar produk (Admin)
-        return view('admin/product_index_v');
+        $data['products'] = $this->productModel->findAll();
+        return view('admin/product_index_v', $data);
     }
 
     public function add()
     {
-        // Halaman form tambah produk
         return view('admin/product_add_v');
     }
 
     public function save()
     {
-        // Fungsi untuk memproses penyimpanan data dari form ke database
-        // Sementara redirect balik ke index karena DB belum siap
-        return redirect()->to('/product');
-    }
+        $this->productModel->save([
+            'name'        => $this->request->getPost('name'),
+            'category'    => $this->request->getPost('category'),
+            'price'       => $this->request->getPost('price'),
+            'description' => $this->request->getPost('description'),
+            'image'       => $this->request->getPost('image'),
+            'stock'       => $this->request->getPost('stock'),
+        ]);
 
-    public function edit($id = null)
-    {
-        // Halaman form edit produk berdasarkan ID
-        return view('admin/product_edit_v');
-    }
-
-    public function update($id = null)
-    {
-        // Fungsi untuk memproses update data
-        return redirect()->to('/product');
-    }
-
-    public function delete($id = null)
-    {
-        // Fungsi untuk menghapus data
-        return redirect()->to('/product');
+        return redirect()->to(base_url('product'))->with('success', 'Produk berhasil ditambahkan!');
     }
 }
