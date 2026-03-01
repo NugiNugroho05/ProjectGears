@@ -11,6 +11,10 @@
                 <a href="#" class="text-muted me-2"> Help</a><small> / </small>
                 <a href="#" class="text-muted mx-2"> Support</a><small> / </small>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+                <a href="<?= base_url('contact') ?>" class="text-muted ms-2"> Contact</a>
+>>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
 =======
                 <a href="<?= base_url('contact') ?>" class="text-muted ms-2"> Contact</a>
 >>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
@@ -113,8 +117,15 @@
                             <div class="dropdown-menu m-0">
                                 <a href="<?= base_url('bestseller') ?>" class="dropdown-item">Bestseller</a>
                                 <a href="<?= base_url('cart') ?>" class="dropdown-item">Cart Page</a>
+<<<<<<< HEAD
                             </div>
                         </div>
+=======
+                                <a href="<?= base_url('checkout') ?>" class="dropdown-item">Checkout</a>
+                            </div>
+                        </div>
+                        <a href="<?= base_url('contact') ?>" class="nav-item nav-link text-white me-2">Contact</a>
+>>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
                     </div>
                     <a href="https://wa.me/6281234567890" target="_blank" class="btn btn-secondary rounded-pill py-2 px-4 px-lg-3 text-white">
                         <i class="fa fa-mobile-alt me-2"></i> +62 812 3456 7890

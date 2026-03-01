@@ -35,6 +35,7 @@
                             $subtotal = $item['price'] * $item['qty'];
                             $totalHarga += $subtotal;
                         ?>
+<<<<<<< HEAD
                         <tr>
                             <th scope="row">
                                 <div class="d-flex align-items-center">
@@ -61,11 +62,43 @@
                                 </a>
                             </td>
                         </tr>
+=======
+                            <tr>
+                                <th scope="row">
+                                    <div class="d-flex align-items-center">
+                                        <img src="<?= base_url('assets/img/' . $item['image']) ?>" class="img-fluid me-5 rounded-circle" style="width: 80px; height: 80px;" alt="<?= $item['name'] ?>" onerror="this.src='<?= base_url('assets/img/fruite-item-5.jpg') ?>';">
+                                    </div>
+                                </th>
+                                <td>
+                                    <p class="mb-0 mt-4"><?= $item['name'] ?></p>
+                                </td>
+                                <td>
+                                    <p class="mb-0 mt-4">Rp <?= number_format($item['price'], 0, ',', '.') ?></p>
+                                </td>
+                                <td>
+                                    <div class="input-group quantity mt-4" style="width: 100px;">
+                                        <input type="text" class="form-control form-control-sm text-center border-0" value="<?= $item['qty'] ?>" readonly>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p class="mb-0 mt-4">Rp <?= number_format($subtotal, 0, ',', '.') ?></p>
+                                </td>
+                                <td>
+                                    <a href="<?= base_url('cart/remove/' . $id) ?>" class="btn btn-md rounded-circle bg-light border mt-3">
+                                        <i class="fa fa-times text-danger"></i>
+                                    </a>
+                                </td>
+                            </tr>
+>>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
                         <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
+<<<<<<< HEAD
             
+=======
+
+>>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
             <div class="row g-4 justify-content-end">
                 <div class="col-sm-8 col-md-7 col-lg-6 col-xl-4">
                     <div class="bg-light rounded">

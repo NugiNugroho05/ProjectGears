@@ -3,11 +3,15 @@
 namespace App\Controllers;
 
 use App\Models\ProductModel;
+<<<<<<< HEAD
 use App\Models\OrderModel; 
+=======
+>>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
 
 class Product extends BaseController
 {
     protected $productModel;
+<<<<<<< HEAD
     protected $orderModel;
 
     public function __construct() {
@@ -56,10 +60,32 @@ class Product extends BaseController
             $file->move('assets/img', $newName);
         }
 
+=======
+
+    public function __construct()
+    {
+        $this->productModel = new ProductModel();
+    }
+
+    public function index()
+    {
+        $data['products'] = $this->productModel->findAll();
+        return view('admin/product_index_v', $data);
+    }
+
+    public function add()
+    {
+        return view('admin/product_add_v');
+    }
+
+    public function save()
+    {
+>>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
         $this->productModel->save([
             'name'        => $this->request->getPost('name'),
             'category'    => $this->request->getPost('category'),
             'price'       => $this->request->getPost('price'),
+<<<<<<< HEAD
             'stock'       => $this->request->getPost('stock'),
             'description' => $this->request->getPost('description'),
             'image'       => $newName
@@ -132,5 +158,13 @@ class Product extends BaseController
         $this->orderModel->delete($id);
         
         return redirect()->to(base_url('admin/orders'))->with('success', 'Pesanan #ORD-'.$id.' berhasil dihapus!');
+=======
+            'description' => $this->request->getPost('description'),
+            'image'       => $this->request->getPost('image'),
+            'stock'       => $this->request->getPost('stock'),
+        ]);
+
+        return redirect()->to(base_url('product'))->with('success', 'Produk berhasil ditambahkan!');
+>>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
     }
 }

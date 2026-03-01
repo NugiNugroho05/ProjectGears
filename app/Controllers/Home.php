@@ -3,7 +3,11 @@
 namespace App\Controllers;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 // Wajib import ProductModel untuk akses database db_gears
+=======
+// Menggunakan ProductModel untuk akses ke database db_gears
+>>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
 =======
 // Menggunakan ProductModel untuk akses ke database db_gears
 >>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
@@ -17,7 +21,11 @@ class Home extends BaseController
     public function __construct()
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         // Inisialisasi model agar bisa dipakai di semua fungsi
+=======
+        // Inisialisasi model satu kali untuk semua fungsi
+>>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
 =======
         // Inisialisasi model satu kali untuk semua fungsi
 >>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
@@ -28,15 +36,21 @@ class Home extends BaseController
     {
         try {
 <<<<<<< HEAD
+<<<<<<< HEAD
             // Mengambil semua produk untuk ditampilkan di halaman utama
             $data['products'] = $this->productModel->findAll();
         } catch (\Exception $e) {
             // Jika DB error, kirim array kosong biar view nggak "Whoops"
 =======
+=======
+>>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
             // Mengambil data produk untuk halaman utama (contoh: 8 produk)
             $data['products'] = $this->productModel->limit(8)->findAll();
         } catch (\Exception $e) {
             // Jika database error, kirim array kosong agar view tidak Whoops!
+<<<<<<< HEAD
+>>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
+=======
 >>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
             $data['products'] = [];
         }
@@ -48,7 +62,11 @@ class Home extends BaseController
     {
         try {
 <<<<<<< HEAD
+<<<<<<< HEAD
             // Ambil data produk untuk halaman Shop
+=======
+            // Ambil semua data produk untuk halaman Shop
+>>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
 =======
             // Ambil semua data produk untuk halaman Shop
 >>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
@@ -59,12 +77,18 @@ class Home extends BaseController
         
         return view('shop_v', $data);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
     }
 
     public function contact() 
     { 
         return view('contact_v');
+<<<<<<< HEAD
+>>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
+=======
 >>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
     }
 
@@ -72,7 +96,11 @@ class Home extends BaseController
     {
         try {
 <<<<<<< HEAD
+<<<<<<< HEAD
             // Ambil 4 produk dengan stok paling sedikit (asumsi paling laku)
+=======
+            // Ambil 4 produk dengan stok paling sedikit (asumsi terlaris)
+>>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
 =======
             // Ambil 4 produk dengan stok paling sedikit (asumsi terlaris)
 >>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
@@ -82,6 +110,7 @@ class Home extends BaseController
         }
         
         return view('bestseller_v', $data);
+<<<<<<< HEAD
 <<<<<<< HEAD
     }
 
@@ -118,6 +147,8 @@ class Home extends BaseController
         $data['cart'] = $cart;
         return view('checkout_v', $data); 
 =======
+=======
+>>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
     }
 
     public function single($id = null)
@@ -133,6 +164,9 @@ class Home extends BaseController
         }
 
         return view('single_v', $data);
+<<<<<<< HEAD
+>>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
+=======
 >>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
     }
 }

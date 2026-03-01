@@ -3,9 +3,12 @@
 namespace App\Controllers;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 use App\Models\OrderModel; // Import Model
 use App\Models\OrderItemModel; // Import Model
 
+=======
+>>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
 =======
 >>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
 class Checkout extends BaseController
@@ -16,6 +19,10 @@ class Checkout extends BaseController
         $cart = $session->get('cart') ?? [];
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        // Proteksi: Kalau keranjang kosong, dilarang masuk ke checkout
+>>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
 =======
         // Proteksi: Kalau keranjang kosong, dilarang masuk ke checkout
 >>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
@@ -32,6 +39,7 @@ class Checkout extends BaseController
         // 1. Ambil data dari form checkout
         $firstName = $this->request->getPost('first_name');
         $address = $this->request->getPost('address');
+<<<<<<< HEAD
 <<<<<<< HEAD
         $paymentMethod = $this->request->getPost('payment_method'); // Ambil dari form
         
@@ -87,6 +95,8 @@ class Checkout extends BaseController
         // 5. Arahkan ke halaman sukses
         return redirect()->to(base_url('/'))->with('success', 'Pesanan berhasil dibuat! ID Pesanan: ' . $orderId);
 =======
+=======
+>>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
         
         // 2. VALIDASI (Biar tahan banting)
         if (empty($firstName) || empty($address)) {
@@ -102,6 +112,9 @@ class Checkout extends BaseController
 
         // 5. Arahkan ke halaman sukses
         return redirect()->to(base_url('/'))->with('success', 'Pesanan berhasil dibuat! Terima kasih.');
+<<<<<<< HEAD
+>>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
+=======
 >>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
     }
 }

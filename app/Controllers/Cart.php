@@ -7,11 +7,14 @@ use App\Models\ProductModel;
 class Cart extends BaseController
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function add($id)
     {
         $productModel = new ProductModel();
         $product = $productModel->find($id);
 =======
+=======
+>>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
     public function index()
     {
         // Mengambil data keranjang dari session untuk ditampilkan
@@ -25,6 +28,9 @@ class Cart extends BaseController
     {
         $model = new ProductModel();
         $product = $model->find($id);
+<<<<<<< HEAD
+>>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
+=======
 >>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
 
         if (!$product) {
@@ -35,18 +41,24 @@ class Cart extends BaseController
         $cart = $session->get('cart') ?? [];
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         // Logika tambah produk ke keranjang
         if (isset($cart[$id])) {
             $cart[$id]['qty']++;
         } else {
             $cart[$id] = [
 =======
+=======
+>>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
         // Jika produk sudah ada di cart, tambah quantity, jika belum, tambah baru
         if (isset($cart[$id])) {
             $cart[$id]['qty'] += 1;
         } else {
             $cart[$id] = [
                 'id'    => $product['id'],
+<<<<<<< HEAD
+>>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
+=======
 >>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
                 'name'  => $product['name'],
                 'price' => $product['price'],
@@ -57,7 +69,11 @@ class Cart extends BaseController
 
         $session->set('cart', $cart);
 <<<<<<< HEAD
+<<<<<<< HEAD
         return redirect()->to(base_url('cart'))->with('success', $product['name'] . ' berhasil ditambahkan!');
+=======
+        return redirect()->back()->with('success', 'Produk berhasil ditambahkan!');
+>>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
 =======
         return redirect()->back()->with('success', 'Produk berhasil ditambahkan!');
 >>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
@@ -74,7 +90,11 @@ class Cart extends BaseController
 
         $session->set('cart', $cart);
 <<<<<<< HEAD
+<<<<<<< HEAD
         return redirect()->to(base_url('cart'))->with('success', 'Produk berhasil dihapus!');
+=======
+        return redirect()->to(base_url('cart'))->with('success', 'Produk dihapus!');
+>>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
 =======
         return redirect()->to(base_url('cart'))->with('success', 'Produk dihapus!');
 >>>>>>> 61a671798292155ef4da05d42f6ecef70f830952
